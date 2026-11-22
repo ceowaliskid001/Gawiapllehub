@@ -1,0 +1,240 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5f5f7;
+    color: #222;
+}
+
+header {
+    background: #111;
+    color: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #aaa;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #aaa;
+}
+
+.cart {
+    font-size: 15px;
+}
+
+.hero {
+    min-height: 500px;
+    background: linear-gradient(90deg, #111, #333);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 60px 8%;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.small-title {
+    color: #aaa;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: white;
+    color: black;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #ccc;
+}
+
+.products {
+    padding: 70px 7%;
+    text-align: center;
+}
+
+.products h2,
+.about h2,
+.contact h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.product {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    transition: 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-7px);
+}
+
+.product img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product h3 {
+    margin: 15px 0 10px;
+}
+
+.product p {
+    color: #777;
+    font-size: 14px;
+}
+
+.product h4 {
+    color: #111;
+    font-size: 21px;
+    margin: 15px 0;
+}
+
+.product button {
+    background: #111;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.product button:hover {
+    background: #444;
+}
+
+.about {
+    padding: 70px 10%;
+    text-align: center;
+    background: #e8e8e8;
+}
+
+.about p {
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.8;
+    color: #555;
+}
+
+.contact {
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.contact p {
+    margin: 15px 0 25px;
+}
+
+.contact .btn {
+    background: #111;
+    color: white;
+}
+
+footer {
+    background: #111;
+    color: white;
+    padding: 25px;
+    text-align: center;
+    line-height: 2;
+}
+
+@media (max-width: 700px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+}
+4. JavaScript — script.js
+This makes the Add to Cart buttons work.
+
+
+javascript
+
+let cartCount = 0;
+let cartItems = [];
+
+function addToCart(name, price) {
+    cartCount++;
+
+    cartItems.push({
+        name: name,
+        price: price
+    });
+
+    document.getElementById("cart-count").textContent = cartCount;
+
+    alert(name + " has been added to your cart!");
+}
